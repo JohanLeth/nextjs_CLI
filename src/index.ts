@@ -1,5 +1,14 @@
 #!/usr/bin/env node
 
-const hello = () => {};
+import fs from "fs";
+import { Command } from "commander";
 
-console.log("Wow");
+const program = new Command();
+
+program
+    .action(() => {
+        console.log("Hallo!");
+    })
+    .description("Say hallo");
+
+program.parse(process.argv);
